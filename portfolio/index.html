@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>JPGee Music – Portfolio &amp; Music Resume</title>
+  <title>JPGee – Session Musician and Producer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio and music resume for JPGee – funk-focused bassist and producer working across rock, grunge, jazz, and metal projects." />
+  <meta name="description" content="Portfolio for JPGee (Josh Gee) – session musician and producer specializing in funk bass, rock, grunge, jazz, and metal." />
+  <meta name="keywords" content="JPGee, Josh Gee, session musician, funk bassist, rock producer, grunge producer, jazz producer, metal producer, remote session musician" />
   <link rel="canonical" href="https://jpgeemusic.github.io/jpgeemusic-site/portfolio/" />
   <link rel="stylesheet" href="../styles.css" />
   <style>
-    .portfolio-hero { text-align: center; padding: 3rem 1.5rem; }
-    .portfolio-hero h1 { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .portfolio-hero { text-align: center; padding: 3rem 1.5rem; background: radial-gradient(circle at top left, #2b3cff, #05060a); }
+    .portfolio-hero h1 { font-size: 2.5rem; margin-bottom: 0.25rem; }
+    .portfolio-hero .subtitle { font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; color: #b0b0c0; margin-bottom: 0.75rem; }
     .portfolio-hero p { max-width: 720px; margin: 0.5rem auto; }
     .section-narrow { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.5rem; }
     .project { margin-bottom: 2.5rem; }
@@ -17,8 +19,9 @@
     .project h3 { margin-top: 1.5rem; }
     .project-meta { font-size: 0.9rem; color: #777; margin-bottom: 0.75rem; }
     audio { width: 100%; margin: 0.5rem 0 1rem; }
+    .gallery-card { background: rgba(12, 15, 25, 0.95); border-radius: 0.9rem; padding: 1.2rem 1.3rem; border: 1px solid rgba(255, 255, 255, 0.06); }
     .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
-    .gallery img { width: 100%; display: block; border-radius: 6px; object-fit: cover; }
+    .gallery img { width: 100%; display: block; border-radius: 6px; object-fit: cover; cursor: pointer; }
     .resume-section h2 { margin-top: 2rem; }
     .resume-item { margin-bottom: 1.25rem; }
     .resume-item h3 { margin-bottom: 0.25rem; }
@@ -26,6 +29,16 @@
     .resume-list { margin-left: 1.25rem; }
     .top-links { margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
     .note { font-size: 0.9rem; color: #777; }
+    .section-card { background: rgba(12, 15, 25, 0.95); border-radius: 0.9rem; padding: 1.8rem 1.6rem; border: 1px solid rgba(255, 255, 255, 0.06); margin-bottom: 1.75rem; }
+    .section-narrow > h2 { margin-bottom: 1rem; }
+    .resume-toggle { margin-top: 1rem; }
+    .resume-toggle summary { cursor: pointer; list-style: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .resume-toggle summary::-webkit-details-marker { display: none; }
+    .resume-toggle summary::before { content: '\25B8'; font-size: 0.9rem; transition: transform 0.15s ease; }
+    .resume-toggle[open] summary::before { transform: rotate(90deg); }
+    .resume-inner { margin-top: 1rem; }
+    .section-gray { background: #11131a; border-radius: 0.9rem; padding: 1.8rem 1.6rem; border: 1px solid rgba(255, 255, 255, 0.06); }
+    .section-gray h2 { margin-top: 0; }
     @media (max-width: 600px) {
       .portfolio-hero h1 { font-size: 2rem; }
     }
@@ -33,7 +46,8 @@
 </head>
 <body>
   <header class="portfolio-hero">
-    <h1>JPGee – Funk-Focused Bassist &amp; Rock/Grunge/Jazz/Metal Producer</h1>
+    <h1>JPGee – Session Musician &amp; Producer</h1>
+    <div class="subtitle">Josh Gee</div>
     <p>Multi-instrumentalist and producer specializing in groove-heavy bass, guitar, and full-track production across rock, grunge, jazz, funk, and metal.</p>
     <div class="top-links">
       <a href="mailto:jpgeeops@gmail.com" class="btn primary">Contact for Projects</a>
@@ -131,24 +145,31 @@
     </section>
 
     <section class="section-narrow">
-      <h2>Photo Gallery</h2>
-      <div class="gallery">
-        <img src="../assets/images/JPGEE_Fiverr.JPG" alt="JPGEE promotional photo" />
-        <img src="../assets/images/Live_Bass.jpeg" alt="Live bass performance" />
-        <img src="../assets/images/DSC07665.jpeg" alt="Performance / session shot" />
-        <img src="../assets/images/GirlIdiot_2.JPG" alt="Girl Idiot band photo" />
-        <img src="../assets/images/GirlIdiot_5.JPG" alt="Girl Idiot band photo" />
-        <img src="../assets/images/TalkshowPawPrint-041.jpg" alt="Studio or live environment" />
-        <img src="../assets/images/TalkshowPawPrint-139.jpg" alt="Studio or live environment" />
-        <img src="../assets/images/IMG_7618.JPEG" alt="JPGEE candid / performance" />
+      <div class="section-gray">
+        <h2>Photo Gallery</h2>
+        <p class="note">Click any image to view it larger.</p>
+        <div class="gallery">
+          <img src="../assets/images/JPGEE_Fiverr.JPG" alt="JPGEE promotional photo" />
+          <img src="../assets/images/Live_Bass.jpeg" alt="Live bass performance" />
+          <img src="../assets/images/DSC07665.jpeg" alt="Performance / session shot" />
+          <img src="../assets/images/GirlIdiot_2.JPG" alt="Girl Idiot band photo" />
+          <img src="../assets/images/GirlIdiot_5.JPG" alt="Girl Idiot band photo" />
+          <img src="../assets/images/TalkshowPawPrint-041.jpg" alt="Studio or live environment" />
+          <img src="../assets/images/TalkshowPawPrint-139.jpg" alt="Studio or live environment" />
+          <img src="../assets/images/IMG_7618.JPEG" alt="JPGEE candid / performance" />
+        </div>
       </div>
     </section>
 
     <section class="section-narrow resume-section">
-      <h2>Music Resume</h2>
-      <p class="note">This resume focuses only on music-related experience. Non-music day jobs have been intentionally omitted.</p>
+      <div class="section-card">
+        <h2>Music Resume</h2>
+        <details class="resume-toggle">
+          <summary>Show / hide detailed resume</summary>
+          <div class="resume-inner">
+            <p class="note">This resume focuses only on music-related experience. Non-music day jobs have been intentionally omitted.</p>
 
-      <h3>Summary</h3>
+            <h3>Summary</h3>
       <p>
         Multi-instrumentalist (with a focus on funk bass) and producer working across rock, grunge, jazz, and metal. Comfortable taking
         projects from rough ideas or voice memos to fully produced demos and finished tracks. Strong collaborator with a detail-oriented,
@@ -224,6 +245,9 @@
         <li>Artist Spotify: <a href="https://open.spotify.com/artist/1OF6j3Wm3MHy7g9AYYGuLm" target="_blank" rel="noopener">JPGEE on Spotify</a></li>
         <li>Band IG (Girl Idiot): <a href="https://www.instagram.com/girlidiot.band/" target="_blank" rel="noopener">@girlidiot.band</a></li>
       </ul>
+          </div>
+        </details>
+      </div>
     </section>
   </main>
 
@@ -231,8 +255,26 @@
     <p>&copy; <span id="year"></span> JPGee Music. All rights reserved.</p>
   </footer>
 
+  <div id="lightbox" style="position:fixed; inset:0; background:rgba(0,0,0,0.85); display:none; align-items:center; justify-content:center; z-index:9999;">
+    <img id="lightbox-img" src="" alt="Gallery image" style="max-width:90%; max-height:90%; border-radius:8px; box-shadow:0 15px 40px rgba(0,0,0,0.7);" />
+  </div>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple lightbox for gallery images
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    });
   </script>
 </body>
 </html>
