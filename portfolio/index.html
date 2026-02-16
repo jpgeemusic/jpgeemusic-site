@@ -9,38 +9,47 @@
   <link rel="canonical" href="https://jpgeemusic.github.io/jpgeemusic-site/portfolio/" />
   <link rel="stylesheet" href="../styles.css" />
   <style>
+    body { font-size: 1.03rem; }
     .portfolio-hero { text-align: center; padding: 3rem 1.5rem; background: radial-gradient(circle at top left, #2b3cff, #05060a); }
-    .portfolio-hero h1 { font-size: 2.5rem; margin-bottom: 0.25rem; }
+    .portfolio-hero h1 { font-size: 2.7rem; margin-bottom: 0.25rem; }
     .portfolio-hero .subtitle { font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; color: #b0b0c0; margin-bottom: 0.75rem; }
     .portfolio-hero p { max-width: 720px; margin: 0.5rem auto; }
     .section-narrow { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+    .section-narrow > h2 { margin-bottom: 1rem; border-bottom: 2px solid rgba(46, 80, 255, 0.4); padding-bottom: 0.4rem; }
     .project { margin-bottom: 2.5rem; }
-    .project h2 { margin-bottom: 0.5rem; }
-    .project h3 { margin-top: 1.5rem; }
-    .project-meta { font-size: 0.9rem; color: #777; margin-bottom: 0.75rem; }
-    audio { width: 100%; margin: 0.5rem 0 1rem; }
+    .project h3 { margin-top: 1.5rem; font-size: 1.3rem; padding: 0.35rem 0.8rem; display: inline-block; border-radius: 0.6rem; background: rgba(43, 60, 255, 0.18); border-left: 3px solid #2b3cff; }
+    .project-meta { font-size: 0.95rem; color: #9aa0c2; margin-bottom: 0.75rem; }
+    audio { width: 100%; margin: 0.25rem 0 1rem; }
+    .audio-label { font-size: 0.9rem; color: #b0b0c0; margin-top: 0.25rem; }
     .gallery-card { background: rgba(12, 15, 25, 0.95); border-radius: 0.9rem; padding: 1.2rem 1.3rem; border: 1px solid rgba(255, 255, 255, 0.06); }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
     .gallery img { width: 100%; display: block; border-radius: 6px; object-fit: cover; cursor: pointer; }
-    .resume-section h2 { margin-top: 2rem; }
+    .gallery-wrapper { position: relative; display: flex; align-items: center; justify-content: center; margin-top: 1rem; }
+    .gallery-main { max-width: 720px; width: 100%; border-radius: 0.9rem; overflow: hidden; }
+    .gallery-main img { width: 100%; display: block; border-radius: 0.9rem; object-fit: cover; transition: opacity 0.4s ease; }
+    .gallery-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(5, 6, 10, 0.75); border: 1px solid rgba(255,255,255,0.2); color: #f5f5ff; border-radius: 999px; width: 2.2rem; height: 2.2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.4rem; }
+    .gallery-arrow-left { left: -0.5rem; }
+    .gallery-arrow-right { right: -0.5rem; }
+    .gallery-arrow:hover { background: rgba(43, 60, 255, 0.9); }
+    .resume-section h2 { margin-top: 0; }
     .resume-item { margin-bottom: 1.25rem; }
     .resume-item h3 { margin-bottom: 0.25rem; }
     .resume-meta { font-size: 0.9rem; color: #777; margin-bottom: 0.25rem; }
     .resume-list { margin-left: 1.25rem; }
     .top-links { margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
-    .note { font-size: 0.9rem; color: #777; }
-    .section-card { background: rgba(12, 15, 25, 0.95); border-radius: 0.9rem; padding: 1.8rem 1.6rem; border: 1px solid rgba(255, 255, 255, 0.06); margin-bottom: 1.75rem; }
-    .section-narrow > h2 { margin-bottom: 1rem; }
+    .note { font-size: 0.95rem; color: #9da1c0; }
+    .section-card { background: rgba(12, 15, 25, 0.95); border-radius: 0.9rem; padding: 1.8rem 1.6rem; border: 1px solid rgba(46, 80, 255, 0.4); margin-bottom: 1.75rem; }
     .resume-toggle { margin-top: 1rem; }
-    .resume-toggle summary { cursor: pointer; list-style: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .resume-toggle summary { cursor: pointer; list-style: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; color: #8ee1ff; }
     .resume-toggle summary::-webkit-details-marker { display: none; }
     .resume-toggle summary::before { content: '\25B8'; font-size: 0.9rem; transition: transform 0.15s ease; }
     .resume-toggle[open] summary::before { transform: rotate(90deg); }
     .resume-inner { margin-top: 1rem; }
-    .section-gray { background: #11131a; border-radius: 0.9rem; padding: 1.8rem 1.6rem; border: 1px solid rgba(255, 255, 255, 0.06); }
+    .section-gray { background: #11131a; border-radius: 0.9rem; padding: 1.8rem 1.6rem; border: 1px solid rgba(46, 80, 255, 0.4); }
     .section-gray h2 { margin-top: 0; }
     @media (max-width: 600px) {
-      .portfolio-hero h1 { font-size: 2rem; }
+      .portfolio-hero h1 { font-size: 2.1rem; }
+      .gallery-arrow-left { left: 0.25rem; }
+      .gallery-arrow-right { right: 0.25rem; }
     }
   </style>
 </head>
@@ -82,10 +91,12 @@
           Working closely with an artist to take raw singer-songwriter voice memos into fully realized concept demos. In a few sessions, we
           moved from basic ideas to structured songs with arrangement, instrumentation, and a clear production direction for a 7–8 song project.
         </p>
+        <p class="audio-label">Carriage Hill – Concept Demo</p>
         <audio controls>
           <source src="../assets/audio/Carriage_Hill_Concept_Molly.wav" type="audio/wav" />
           Your browser does not support the audio element.
         </audio>
+        <p class="audio-label">Growing Pains – Concept Demo</p>
         <audio controls>
           <source src="../assets/audio/Growing_Pains_Molly.wav" type="audio/wav" />
           Your browser does not support the audio element.
@@ -107,6 +118,7 @@
         <div class="embed">
           <iframe width="100%" height="315" src="https://www.youtube.com/embed/jwZ3oSeQauA" title="Album in a Day" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+        <p class="audio-label">"Launch" – Track from Album in a Day</p>
         <audio controls>
           <source src="../assets/audio/Launch.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
@@ -120,10 +132,12 @@
           For my band Girl Idiot, I took rough voice memo ideas and turned them into full instrumental demos ready for studio recording or
           in-house production. The focus was on capturing the band's energy while giving us clear arrangements to build from.
         </p>
+        <p class="audio-label">"Happy Song" – Band Demo</p>
         <audio controls>
           <source src="../assets/audio/Happy_Song_Girl_Idiot_Demo.wav" type="audio/wav" />
           Your browser does not support the audio element.
         </audio>
+        <p class="audio-label">"Red River" – Band Demo</p>
         <audio controls>
           <source src="../assets/audio/Red_River_Girl_Idiot_Demo.wav" type="audio/wav" />
           Your browser does not support the audio element.
@@ -147,16 +161,23 @@
     <section class="section-narrow">
       <div class="section-gray">
         <h2>Photo Gallery</h2>
-        <p class="note">Click any image to view it larger.</p>
-        <div class="gallery">
-          <img src="../assets/images/JPGEE_Fiverr.JPG" alt="JPGEE promotional photo" />
-          <img src="../assets/images/Live_Bass.jpeg" alt="Live bass performance" />
-          <img src="../assets/images/DSC07665.jpeg" alt="Performance / session shot" />
-          <img src="../assets/images/GirlIdiot_2.JPG" alt="Girl Idiot band photo" />
-          <img src="../assets/images/GirlIdiot_5.JPG" alt="Girl Idiot band photo" />
-          <img src="../assets/images/TalkshowPawPrint-041.jpg" alt="Studio or live environment" />
-          <img src="../assets/images/TalkshowPawPrint-139.jpg" alt="Studio or live environment" />
-          <img src="../assets/images/IMG_7618.JPEG" alt="JPGEE candid / performance" />
+        <p class="note">Click any image to view it larger, or use the arrows to cycle through.</p>
+        <div class="gallery-wrapper">
+          <button class="gallery-arrow gallery-arrow-left" type="button">&#8249;</button>
+          <div class="gallery-main">
+            <img src="../assets/images/JPGEE_Fiverr.JPG" alt="JPGEE promotional photo" />
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" type="button">&#8250;</button>
+          <div class="gallery" style="display:none;">
+            <img src="../assets/images/JPGEE_Fiverr.JPG" alt="JPGEE promotional photo" />
+            <img src="../assets/images/Live_Bass.jpeg" alt="Live bass performance" />
+            <img src="../assets/images/DSC07665.jpeg" alt="Performance / session shot" />
+            <img src="../assets/images/GirlIdiot_2.JPG" alt="Girl Idiot band photo" />
+            <img src="../assets/images/GirlIdiot_5.JPG" alt="Girl Idiot band photo" />
+            <img src="../assets/images/TalkshowPawPrint-041.jpg" alt="Studio or live environment" />
+            <img src="../assets/images/TalkshowPawPrint-139.jpg" alt="Studio or live environment" />
+            <img src="../assets/images/IMG_7618.JPEG" alt="JPGEE candid / performance" />
+          </div>
         </div>
       </div>
     </section>
@@ -262,15 +283,63 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Simple lightbox for gallery images
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    document.querySelectorAll('.gallery img').forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
-      });
+
+    // Gallery carousel setup
+    const galleryHidden = document.querySelector('.gallery');
+    const galleryMain = document.querySelector('.gallery-main img');
+    const arrowLeft = document.querySelector('.gallery-arrow-left');
+    const arrowRight = document.querySelector('.gallery-arrow-right');
+
+    const galleryImages = Array.from(galleryHidden.querySelectorAll('img')).map(img => ({
+      src: img.src,
+      alt: img.alt
+    }));
+
+    let currentIndex = 0;
+    let slideTimer;
+
+    function showImage(index) {
+      currentIndex = (index + galleryImages.length) % galleryImages.length;
+      galleryMain.style.opacity = 0;
+      setTimeout(() => {
+        galleryMain.src = galleryImages[currentIndex].src;
+        galleryMain.alt = galleryImages[currentIndex].alt;
+        galleryMain.style.opacity = 1;
+      }, 200);
+    }
+
+    function nextImage(step = 1) {
+      showImage(currentIndex + step);
+      resetTimer();
+    }
+
+    function startTimer() {
+      slideTimer = setInterval(() => {
+        showImage(currentIndex + 1);
+      }, 6000);
+    }
+
+    function resetTimer() {
+      if (slideTimer) clearInterval(slideTimer);
+      startTimer();
+    }
+
+    if (galleryImages.length > 0) {
+      showImage(0);
+      startTimer();
+    }
+
+    arrowLeft.addEventListener('click', () => nextImage(-1));
+    arrowRight.addEventListener('click', () => nextImage(1));
+
+    // Lightbox on click
+    galleryMain.addEventListener('click', () => {
+      lightboxImg.src = galleryMain.src;
+      lightbox.style.display = 'flex';
     });
+
     lightbox.addEventListener('click', () => {
       lightbox.style.display = 'none';
       lightboxImg.src = '';
