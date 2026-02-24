@@ -7,7 +7,7 @@ import Resume from './pages/Resume'
 
 function App() {
   return (
-    <Router>
+    <Router basename="/jpgeemusic-site">
       <div className="app">
         <header className="site-header">
           <div className="brand">Josh Gee</div>
