@@ -1,0 +1,12 @@
+.resume-summary {
+  margin-top: 1.5rem;
+  padding: 1.1rem 1.2rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: rgba(15, 23, 42, 0.96);
+  color: var(--muted);
+}
+
+.resume-summary h2 {
+  margin-top: 0;
+}

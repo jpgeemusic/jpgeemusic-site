@@ -1,0 +1,32 @@
+.academic-card {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: rgba(15, 23, 42, 0.96);
+  margin-bottom: 1rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.6);
+}
+
+.academic-header {
+  width: 100%;
+  padding: 0.95rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.98), #020617);
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.academic-subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.academic-body {
+  padding: 0.85rem 1.1rem 1.05rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.32);
+  font-size: 0.92rem;
+  color: var(--muted);
+}

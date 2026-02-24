@@ -1,0 +1,69 @@
+.projects h1 {
+  margin-bottom: 0.5rem;
+}
+
+.project-card {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: rgba(15, 23, 42, 0.96);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.6);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.project-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.95rem 1.1rem;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.98), #020617);
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.project-title-block h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.project-subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.tag-row {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  color: var(--muted);
+}
+
+.toggle-indicator {
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.project-body {
+  padding: 0.85rem 1.1rem 1.05rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.32);
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.project-body ul {
+  margin-top: 0.5rem;
+}
