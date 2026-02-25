@@ -27,28 +27,11 @@ function Home() {
         </div>
         <div className="hero-visual">
           <img
-            src="/jpgeemusic-site/assets/headshot.jpg"
+            src="/jpgeemusic-site/headshot.jpg"
             alt="Professional headshot of Josh Gee"
             className="headshot-img"
           />
         </div>
-      </section>
-
-      <section className="section about">
-        <h2>About</h2>
-        <p>
-          I&apos;m an engineering student with a strong bias toward action and
-          follow‑through. I like taking messy, half‑defined problems and turning
-          them into repeatable workflows—especially when there&apos;s a chance to
-          tighten up process control or connect hardware and software in useful
-          ways.
-        </p>
-        <p>
-          Recently I&apos;ve been working with virtualized Linux environments and
-          AI tools to support real projects, not just experiments. I&apos;m
-          interested in roles where I can combine process control, forward‑looking
-          AI integration, and solid engineering fundamentals.
-        </p>
       </section>
 
       <section className="section skills">
@@ -89,6 +72,39 @@ function Home() {
         </div>
       </section>
 
+      <section className="section skills">
+        <h2>Technical Skills</h2>
+        <div className="skill-grid">
+          <div className="skill-card">
+            <h3>Design &amp; CAD</h3>
+            <ul>
+              <li>SolidWorks 3D</li>
+              <li>AutoCAD</li>
+            </ul>
+          </div>
+          <div className="skill-card">
+            <h3>Engineering Tools</h3>
+            <ul>
+              <li>Matlab</li>
+              <li>Minitab</li>
+            </ul>
+          </div>
+          <div className="skill-card">
+            <h3>Programming</h3>
+            <ul>
+              <li>Java</li>
+            </ul>
+          </div>
+          <div className="skill-card">
+            <h3>Audio &amp; Media</h3>
+            <ul>
+              <li>Ableton Live</li>
+              <li>Premiere Pro</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section className="section contact">
         <h2>Contact</h2>
         <p>
@@ -99,6 +115,9 @@ function Home() {
         </p>
         <p className="contact-email">
           Email: <span>joshgee103@gmail.com</span>
+        </p>
+        <p className="contact-email">
+          Text: <span>440-420-6779</span>
         </p>
       </section>
     </div>
