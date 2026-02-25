@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import Academic from './pages/Academic'
@@ -7,7 +7,7 @@ import Resume from './pages/Resume'
 
 function App() {
   return (
-    <Router basename="/jpgeemusic-site">
+    <Router>
       <div className="app">
         <header className="site-header">
           <div className="brand">Josh Gee</div>

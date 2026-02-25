@@ -8,15 +8,13 @@ function Home() {
         <div className="hero-text">
           <h1>Engineering Work With Follow‑Through</h1>
           <p className="hero-sub">
-            I&apos;m <span className="highlight">Josh Gee</span> – an engineer who learns fast, stays with a
-            problem until it&apos;s solved, and builds processes that are stable,
-            efficient, and easy to work with.
+            Mechanical engineering student passionate about process control and
+            process efficiency, with a strong ability to quickly learn and apply
+            complex technical concepts.
           </p>
           <p className="hero-body">
-            My strength lies in my ability to learn and stay the course until
-            completion. I work well with others, adapt quickly, and focus on
-            process control, forward‑thinking use of AI, and practical systems
-            that actually get used.
+            I enjoy analyzing how systems behave and engineering practical,
+            efficient solutions that improve performance.
           </p>
           <div className="hero-ctas">
             <Link to="/projects" className="btn btn-primary">
